@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✈ ColombiaIrNubes | Vuelos Nacionales y Promociones</title>
+  <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #001f3f, #000814 85%);
+      color: #e6f7ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ---------- BANNER SUPERIOR ---------- */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 0;
+      background: linear-gradient(90deg, #007bff, #0055cc, #001f3f);
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px #a7d8ff;
+      box-shadow: 0 0 20px rgba(0, 140, 255, 0.5);
+      z-index: 10;
+    }
+
+    header span {
+      color: #a7e4ff;
+      font-weight: 700;
+    }
+
+    /* ---------- AVIÓN ANIMADO ---------- */
+    .fondo-avion {
+      position: absolute;
+      top: 50%;
+      left: -200px;
+      width: 180px;
+      opacity: 0.1;
+      animation: volar 20s linear infinite;
+    }
+
+    @keyframes volar {
+      from { transform: translateX(0) translateY(-50%); }
+      to { transform: translateX(130vw) translateY(-50%); }
+    }
+
+    /* ---------- CONTENEDOR PRINCIPAL ---------- */
+    .contenedor {
+      margin-top: 110px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(0, 180, 255, 0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      z-index: 2;
+    }
+
+    .contenedor h2 {
+      font-size: 1.7rem;
+      color: #5fd1ff;
+      text-shadow: 0 0 12px #3cbaff;
+      margin-bottom: 10px;
+    }
+
+    .contenedor p {
+      color: #bde9ff;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    /* ---------- BOTONES ---------- */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .botones.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .boton {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #00aaff, #004b9a);
+      box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .boton:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(0, 220, 255, 0.8);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #001f3f, #000814);
+      text-align: center;
+      color: #a7d8ff;
+      padding: 12px 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      border-top: 1px solid rgba(0, 150, 255, 0.2);
+    }
+
+    footer span {
+      color: #5fd1ff;
+      text-shadow: 0 0 8px #5fd1ff;
+      font-weight: bold;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 600px) {
+      .contenedor {
+        padding: 30px 20px;
+      }
+      .boton {
+        font-size: 15px;
+        padding: 10px 14px;
+      }
+      .fondo-avion {
+        width: 120px;
+        animation-duration: 22s;
+      }
+      header {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <header>🌤 Bienvenido a <span>ColombiaIrNubes</span> | Vuela sin límites ✈️</header>
+
+  <!-- Fondo animado con avión -->
+  <img src="https://cdn-icons-png.flaticon.com/512/69/69906.png" alt="Avión volando" class="fondo-avion">
+
+  <!-- Contenido principal -->
+  <div class="contenedor">
+    <h2>✈ Vuelos Nacionales Colombia</h2>
+    <p>Descubre las mejores ofertas desde <strong>$99.900 COP</strong></p>
+
+    <div class="botones" id="botones">
+      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
+        <button class="boton">✈ Cotizar</button>
+      </a>
+      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
+        <button class="boton">🛒 Reservar</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 <span>ColombiaIrNubes</span> | Elevando tus viajes por todo el país 🇨🇴
+  </footer>
+
+  <!-- Animación de aparición -->
+  <script>
+    setTimeout(() => {
+      document.getElementById("botones").classList.add("visible");
+    }, 2000);
+  </script>
+
+</body>
+</html>
